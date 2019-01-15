@@ -13,14 +13,12 @@ before_script:
   - python manage.py makemigrations
   - python manage.py migrate
 script:
-  - ./manage.py test mixnet
+  - python manage.py test mixnet
 sudo: required
 services:
   - postgresql
 addons:
   postgresql: "9.6"
-  sonarcloud:
-    organization: "pablotabares-github"
 global:
   - PGPORT=5432
 notifications:
